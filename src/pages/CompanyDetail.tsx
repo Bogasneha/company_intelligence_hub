@@ -22,14 +22,12 @@ const tabs = [
 
 function MetricBlock({ icon: Icon, label, value }: { icon: React.ElementType; label: string; value: string }) {
   return (
-    <div className="rounded-2xl border-2 border-[#F3D0D7] bg-white p-5 hover:-translate-y-0.5 transition-all duration-300">
-      <div className="flex items-center gap-2 mb-3">
-        <div className="bg-[#F3D0D7]/40 p-1.5 rounded-full">
-          <Icon className="h-4 w-4 text-[#7A3E4D]" />
-        </div>
-        <p className="text-[11px] font-bold text-[#7A3E4D]/80 uppercase tracking-widest">{label}</p>
+    <div className="rounded-2xl border border-slate-100 bg-white p-5 shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] hover:shadow-md transition-all duration-300">
+      <div className="flex items-center gap-2.5 mb-2.5">
+        <Icon className="h-4 w-4 text-[#28A6E3]" strokeWidth={2} />
+        <p className="text-[11px] font-bold text-[#28A6E3] uppercase tracking-widest">{label}</p>
       </div>
-      <p className="text-[16px] font-bold text-[#3D1821] break-words">{value}</p>
+      <p className="text-[15px] font-medium text-[#475569] break-words">{value}</p>
     </div>
   );
 }
@@ -37,17 +35,15 @@ function MetricBlock({ icon: Icon, label, value }: { icon: React.ElementType; la
 function SplitList({ title, items, icon: Icon }: { title: string; items: string; icon: React.ElementType }) {
   const list = (items || "").split(";").filter(x => x.trim().length > 0);
   return (
-    <div className="rounded-2xl border-2 border-[#F3D0D7] bg-white p-6 h-full hover:-translate-y-0.5 transition-all duration-300">
+    <div className="rounded-2xl border border-slate-100 bg-white p-6 h-full shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] hover:shadow-md transition-all duration-300">
       <div className="flex items-center gap-2 mb-4">
-        <div className="bg-[#F3D0D7]/40 p-1.5 rounded-full">
-          <Icon className="h-4 w-4 text-[#7A3E4D]" />
-        </div>
-        <h4 className="text-[15px] font-bold text-[#3D1821]">{title}</h4>
+        <Icon className="h-[18px] w-[18px] text-[#28A6E3]" strokeWidth={2} />
+        <h4 className="text-[12px] font-bold text-[#28A6E3] uppercase tracking-widest">{title}</h4>
       </div>
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-2.5">
         {list.length > 0 ? list.map((item, i) => (
-          <span key={i} className="rounded-full bg-[#F3D0D7]/30 px-3 py-1.5 text-[12px] font-semibold text-[#572733]">{item.trim()}</span>
-        )) : <span className="text-[12px] font-medium text-[#7A3E4D]/80">Not Available</span>}
+          <span key={i} className="rounded-full bg-[#f1f5f9] px-4 py-1.5 text-[13px] font-medium text-[#475569]">{item.trim()}</span>
+        )) : <span className="text-[13px] font-medium text-slate-400">Not Available</span>}
       </div>
     </div>
   );
@@ -416,7 +412,7 @@ function TabContent({ tabId, company }: { tabId: string; company: any }) {
 
         return (
           <div key={sIdx} className="space-y-4">
-            <h3 className="text-[14px] font-extrabold text-[#354259] uppercase tracking-widest border-b-2 border-[#354259]/10 pb-3 mb-2">
+            <h3 className="text-[13px] font-bold text-slate-500 uppercase tracking-widest border-b border-gray-200 pb-3 mb-5">
               {section.title}
             </h3>
             
@@ -433,15 +429,18 @@ function TabContent({ tabId, company }: { tabId: string; company: any }) {
                  {links.map(f => {
                    const val = normalizeValue(getValue(company, f.key));
                    return (
-                     <a
-                       key={f.key}
-                       href={val === "Not Available" ? undefined : val}
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       className="flex items-center gap-2 rounded-lg border border-border bg-card px-4 py-2.5 text-xs font-medium text-foreground hover:border-accent/30 hover:text-accent transition-all"
-                     >
-                       <Globe className="h-4 w-4" /> {f.label}: {val} <ExternalLink className="h-3 w-3" />
-                     </a>
+                      <a
+                        key={f.key}
+                        href={val === "Not Available" ? undefined : val}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="flex items-center gap-2 rounded-2xl border border-[#fda4af] bg-white px-5 py-2.5 text-[14px] font-bold text-[#f04c63] hover:border-[#fca5a5] hover:shadow-sm transition-all"
+                      >
+                        <Globe className="h-[18px] w-[18px] text-[#f04c63]" strokeWidth={1.5} /> 
+                        {f.label}: 
+                        <span className="text-slate-500 font-medium truncate max-w-[200px] pl-1">{val}</span> 
+                        <ExternalLink className="h-3.5 w-3.5 ml-2 text-[#f04c63]" strokeWidth={1.5} />
+                      </a>
                    );
                  })}
                </div>
@@ -458,14 +457,12 @@ function TabContent({ tabId, company }: { tabId: string; company: any }) {
             {texts.length > 0 && (
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mt-4 items-stretch">
                 {texts.map(f => (
-                  <div key={f.key} className="rounded-2xl border-2 border-[#F3D0D7] bg-white p-6 h-full hover:-translate-y-0.5 transition-all duration-300">
-                    <h4 className="flex items-center gap-2.5 text-[15px] font-bold text-[#3D1821] mb-4">
-                      <div className="bg-[#F3D0D7]/40 p-1.5 rounded-full">
-                         <CheckCircle className="h-4 w-4 text-[#7A3E4D]" />
-                      </div>
-                      {f.label}
-                    </h4>
-                    <p className="text-[13px] leading-relaxed font-medium text-[#572733] whitespace-pre-wrap">
+                  <div key={f.key} className="rounded-2xl border border-slate-100 bg-white p-6 h-full shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] hover:shadow-md transition-all duration-300">
+                    <div className="flex items-center gap-2 mb-4">
+                       <CheckCircle className="h-[18px] w-[18px] text-[#28A6E3]" strokeWidth={2} />
+                       <h4 className="text-[12px] font-bold text-[#28A6E3] uppercase tracking-widest">{f.label}</h4>
+                    </div>
+                    <p className="text-[14px] leading-relaxed font-medium text-[#475569] whitespace-pre-wrap">
                       {normalizeValue(getValue(company, f.key))}
                     </p>
                   </div>
@@ -736,24 +733,24 @@ const CompanyDetail = () => {
                 )}
               </div>
             </div>
-            <div className="flex items-center gap-3">
-              <button onClick={() => navigate(`/companies/${companyId}/skills`)} className="flex items-center gap-2.5 rounded-2xl border border-white bg-white pl-2 pr-4 py-2 text-[13px] font-bold text-[#5c6846] hover:-translate-y-0.5 transition-all duration-300">
-                <div className="bg-[#9AB17A]/20 p-1.5 rounded-full">
-                  <BrainCircuit className="h-4 w-4 text-[#7B9253]" /> 
+            <div className="flex items-center gap-8 pl-4">
+              <button onClick={() => navigate(`/companies/${companyId}/skills`)} className="flex items-center gap-3 group transition-all duration-300">
+                <div className="bg-[#f2f5ed] p-2.5 rounded-full group-hover:bg-[#e4ebd8] transition-colors">
+                  <BrainCircuit className="h-[18px] w-[18px] text-[#A3B85D]" strokeWidth={2} /> 
                 </div>
-                Hiring Skill Sets
+                <span className="text-[14px] font-bold text-[#5c6846] leading-tight text-left">Hiring Skill<br/>Sets</span>
               </button>
-              <button onClick={() => navigate(`/companies/${companyId}/hiring`)} className="flex items-center gap-2.5 rounded-2xl border border-white bg-white pl-2 pr-4 py-2 text-[13px] font-bold text-[#5c6846] hover:-translate-y-0.5 transition-all duration-300">
-                <div className="bg-[#9AB17A]/20 p-1.5 rounded-full">
-                  <ClipboardList className="h-4 w-4 text-[#7B9253]" /> 
+              <button onClick={() => navigate(`/companies/${companyId}/hiring`)} className="flex items-center gap-3 group transition-all duration-300">
+                <div className="bg-[#f2f5ed] p-2.5 rounded-full group-hover:bg-[#e4ebd8] transition-colors">
+                  <ClipboardList className="h-[18px] w-[18px] text-[#A3B85D]" strokeWidth={2} /> 
                 </div>
-                Hiring Process
+                <span className="text-[14px] font-bold text-[#5c6846] leading-tight text-left">Hiring<br/>Process</span>
               </button>
-              <button onClick={() => navigate(`/companies/${companyId}/innovx`)} className="flex items-center gap-2.5 rounded-2xl border border-white bg-white pl-2 pr-4 py-2 text-[13px] font-bold text-[#5c6846] hover:-translate-y-0.5 transition-all duration-300">
-                <div className="bg-[#9AB17A]/20 p-1.5 rounded-full">
-                  <Lightbulb className="h-4 w-4 text-[#7B9253]" /> 
+              <button onClick={() => navigate(`/companies/${companyId}/innovx`)} className="flex items-center gap-3 group transition-all duration-300">
+                <div className="bg-[#f2f5ed] p-2.5 rounded-full group-hover:bg-[#e4ebd8] transition-colors">
+                  <Lightbulb className="h-[18px] w-[18px] text-[#A3B85D]" strokeWidth={2} /> 
                 </div>
-                INNOVX
+                <span className="text-[14px] font-bold text-[#5c6846] leading-tight text-left">INNOVX</span>
               </button>
             </div>
           </div>
