@@ -1,0 +1,395 @@
+{
+  "data": {
+    "company_id": 4,
+    "name": "PatientGain LLC",
+    "short_name": "PatientGain",
+    "category": "SMB (Healthcare Marketing Technology Company)",
+    "incorporation_year": "2014 (estimated)",
+    "nature_of_company": "Privately Held",
+    "headquarters_address": "California,United States",
+    "office_count": "1 (estimated offshore delivery center in India)",
+    "employee_size": "50–100 employees (estimated)",
+    "website_url": "https://patientgain.com",
+    "linkedin_url": "https://www.linkedin.com/company/patientgain",
+    "twitter_handle": "@PatientGain",
+    "facebook_url": "https://www.facebook.com/patientgain",
+    "instagram_url": "Not Found",
+    "primary_contact_email": "info@patientgain.com (estimated)",
+    "primary_phone_number": "Not Found",
+    "overview_text": "PatientGain is a healthcare-focused digital marketing and patient acquisition platform that helps hospitals, clinics, and doctors improve online visibility, attract patients, and manage reputation using AI-driven tools and SEO strategies.",
+    "vision_statement": "To become a leading digital growth partner for healthcare providers globally",
+    "mission_statement": "To help healthcare providers attract, engage, and retain patients through data-driven marketing solutions",
+    "legal_issues": "None publicly reported",
+    "carbon_footprint": "Low (digital services company)",
+    "tier": "Dream",
+    "company_core_values": [
+      {
+        "company_id": 4,
+        "core_values": "Customer-centricity",
+        "core_values_id": 15
+      },
+      {
+        "company_id": 4,
+        "core_values": "Innovation",
+        "core_values_id": 16
+      },
+      {
+        "company_id": 4,
+        "core_values": "Data-driven decision making",
+        "core_values_id": 17
+      },
+      {
+        "company_id": 4,
+        "core_values": "Integrity",
+        "core_values_id": 18
+      }
+    ],
+    "company_brand_reputation": [
+      {
+        "company_id": 4,
+        "google_rating": "~4.0/5 (estimated)",
+        "indeed_rating": "~3.5/5 (estimated)",
+        "website_rating": "7/10",
+        "website_quality": "Professional, healthcare-focused, strong SEO messaging but moderate UI modernity",
+        "glassdoor_rating": "~3.5/5 (estimated)",
+        "brand_reputation_id": 4,
+        "brand_sentiment_score": "Moderate positive (~7/10 based on reviews and niche presence)",
+        "social_media_followers": "~5K–10K (estimated)"
+      }
+    ],
+    "company_business": [
+      {
+        "sam": "$3B–$5B healthcare SMB digital marketing",
+        "som": "~$50M–$100M target niche",
+        "tam": "$20B+ global healthcare marketing market",
+        "company_id": 4,
+        "sales_motion": "Inside Sales + Digital Marketing",
+        "future_projections": "Expected steady growth at ~20% CAGR",
+        "innovation_roadmap": "Enhanced AI SEO tools; Automation dashboards",
+        "company_business_id": 4,
+        "company_focus_sectors": [
+          {
+            "focus_sectors": "Healthcare"
+          },
+          {
+            "focus_sectors": "Digital Marketing"
+          },
+          {
+            "focus_sectors": "HealthTech"
+          },
+          {
+            "focus_sectors": "SaaS"
+          }
+        ],
+        "company_top_customers": [
+          {
+            "top_customers": "Hospitals"
+          },
+          {
+            "top_customers": "Clinics"
+          },
+          {
+            "top_customers": "Individual Doctors"
+          },
+          {
+            "top_customers": "Dental Practices"
+          },
+          {
+            "top_customers": "Specialty Healthcare Providers"
+          }
+        ],
+        "company_key_competitors": [
+          {
+            "key_competitors": "Solutionreach"
+          },
+          {
+            "key_competitors": "Practo"
+          },
+          {
+            "key_competitors": "Zocdoc"
+          },
+          {
+            "key_competitors": "WebMD"
+          },
+          {
+            "key_competitors": "Healthgrades"
+          },
+          {
+            "key_competitors": "Doctor.com"
+          }
+        ],
+        "market_share_percentage": "<1% global healthcare martech market",
+        "customer_concentration_risk": "No – diversified SMB healthcare clients",
+        "company_offerings_description": [
+          {
+            "offerings_description": "SEO for healthcare"
+          },
+          {
+            "offerings_description": "Patient acquisition platform"
+          },
+          {
+            "offerings_description": "Website design"
+          },
+          {
+            "offerings_description": "PPC campaigns"
+          },
+          {
+            "offerings_description": "Reputation management"
+          },
+          {
+            "offerings_description": "Content marketing"
+          }
+        ],
+        "company_competitive_advantages": [
+          {
+            "competitive_advantages": "Domain expertise in healthcare marketing"
+          },
+          {
+            "competitive_advantages": "Established SEO frameworks"
+          },
+          {
+            "competitive_advantages": "Cost-effective offshore delivery"
+          }
+        ],
+        "company_core_value_proposition": [
+          {
+            "core_value_proposition": "Improved patient acquisition ROI"
+          },
+          {
+            "core_value_proposition": "Healthcare-specific SEO expertise"
+          },
+          {
+            "core_value_proposition": "AI-driven marketing automation"
+          },
+          {
+            "core_value_proposition": "Enhanced online reputation"
+          }
+        ],
+        "company_unique_differentiators": [
+          {
+            "unique_differentiators": "Healthcare-only focus"
+          },
+          {
+            "unique_differentiators": "AI-powered patient acquisition"
+          },
+          {
+            "unique_differentiators": "Strong SEO specialization"
+          }
+        ]
+      }
+    ],
+    "company_compensation": [
+      {
+        "company_id": 4,
+        "bonus_predictability": "Low–Moderate",
+        "fixed_vs_variable_pay": "Mostly fixed",
+        "company_compensation_id": 4
+      }
+    ],
+    "company_culture": [
+      {
+        "company_id": 4,
+        "burnout_risk": "Moderate",
+        "layoff_history": "Not reported",
+        "crisis_behavior": "Not publicly documented",
+        "manager_quality": "Moderate – execution-focused",
+        "mission_clarity": "Clear healthcare focus",
+        "employee_turnover": "~15–20% annually (industry estimate)",
+        "company_culture_id": 4,
+        "avg_retention_tenure": "~2.5 years (estimated)",
+        "psychological_safety": "Moderate"
+      }
+    ],
+    "company_financials": [
+      {
+        "burn_rate": "Low (bootstrapped operations)",
+        "valuation": "$10M–$30M (estimated)",
+        "churn_rate": "~10–15% annually (estimated)",
+        "company_id": 4,
+        "annual_profit": "Not Found (likely modest profitability)",
+        "cac_ltv_ratio": "~1:5 to 1:10",
+        "runway_months": "Sustainable (cash-flow driven)",
+        "annual_revenue": "$3M–$8M (estimated)",
+        "burn_multiplier": "~1.5–2.0 (estimated)",
+        "yoy_growth_rate": "~15–25% (estimated)",
+        "net_promoter_score": "~40–50 (estimated)",
+        "profitability_status": "Likely profitable",
+        "total_capital_raised": "<$5M (estimated)",
+        "company_financials_id": 4,
+        "customer_lifetime_value": "$5,000–$15,000 (estimated)",
+        "customer_acquisition_cost": "$500–$1500 (estimated)"
+      }
+    ],
+    "company_logistics": [
+      {
+        "company_id": 4,
+        "weekend_work": "Rare",
+        "typical_hours": "Flexible but aligned to US shifts",
+        "office_zone_type": "IT/Commercial hubs",
+        "location_centrality": "Likely tech hubs",
+        "airport_commute_time": "~30–60 minutes",
+        "company_logistics_id": 4,
+        "overtime_expectations": "Occasional",
+        "remote_policy_details": "Hybrid/Remote-friendly (~60% remote)"
+      }
+    ],
+    "company_people": [
+      {
+        "ceo_name": "Not Publicly Disclosed",
+        "company_id": 4,
+        "ceo_linkedin_url": "Not Found",
+        "company_people_id": 4,
+        "contact_person_name": "Not Found",
+        "contact_person_email": "Not Found",
+        "contact_person_phone": "Not Found",
+        "contact_person_title": "Not Found",
+        "decision_maker_access": "Medium – reachable via website/contact forms but leadership visibility is low"
+      }
+    ],
+    "company_talent_growth": [
+      {
+        "company_id": 4,
+        "brand_value": "Niche recognition",
+        "role_clarity": "Moderate clarity",
+        "training_spend": "Low–Moderate (estimated)",
+        "early_ownership": "Moderate",
+        "skill_relevance": "High in digital marketing",
+        "automation_level": "Moderate",
+        "company_maturity": "Early-stage SMB",
+        "exposure_quality": "Good real-world client exposure",
+        "internal_mobility": "Moderate",
+        "onboarding_quality": "Moderate structured onboarding",
+        "external_recognition": "Moderate",
+        "company_talent_growth_id": 4,
+        "execution_thinking_balance": "Execution-heavy"
+      }
+    ],
+    "company_technologies": [
+      {
+        "company_id": 4,
+        "r_and_d_investment": "~10–15% of revenue (estimated)",
+        "ai_ml_adoption_level": "Moderate – used for SEO optimization and lead scoring",
+        "company_technologies_id": 4
+      }
+    ]
+  },
+  "allKeys": [
+    "company_id",
+    "name",
+    "short_name",
+    "category",
+    "incorporation_year",
+    "nature_of_company",
+    "headquarters_address",
+    "office_count",
+    "employee_size",
+    "website_url",
+    "linkedin_url",
+    "twitter_handle",
+    "facebook_url",
+    "instagram_url",
+    "primary_contact_email",
+    "primary_phone_number",
+    "overview_text",
+    "vision_statement",
+    "mission_statement",
+    "legal_issues",
+    "carbon_footprint",
+    "tier",
+    "company_core_values[].company_id",
+    "company_core_values[].core_values",
+    "company_core_values[].core_values_id",
+    "company_brand_reputation[].company_id",
+    "company_brand_reputation[].google_rating",
+    "company_brand_reputation[].indeed_rating",
+    "company_brand_reputation[].website_rating",
+    "company_brand_reputation[].website_quality",
+    "company_brand_reputation[].glassdoor_rating",
+    "company_brand_reputation[].brand_reputation_id",
+    "company_brand_reputation[].brand_sentiment_score",
+    "company_brand_reputation[].social_media_followers",
+    "company_business[].sam",
+    "company_business[].som",
+    "company_business[].tam",
+    "company_business[].company_id",
+    "company_business[].sales_motion",
+    "company_business[].future_projections",
+    "company_business[].innovation_roadmap",
+    "company_business[].company_business_id",
+    "company_business[].company_focus_sectors[].focus_sectors",
+    "company_business[].company_top_customers[].top_customers",
+    "company_business[].company_key_competitors[].key_competitors",
+    "company_business[].market_share_percentage",
+    "company_business[].customer_concentration_risk",
+    "company_business[].company_offerings_description[].offerings_description",
+    "company_business[].company_competitive_advantages[].competitive_advantages",
+    "company_business[].company_core_value_proposition[].core_value_proposition",
+    "company_business[].company_unique_differentiators[].unique_differentiators",
+    "company_compensation[].company_id",
+    "company_compensation[].bonus_predictability",
+    "company_compensation[].fixed_vs_variable_pay",
+    "company_compensation[].company_compensation_id",
+    "company_culture[].company_id",
+    "company_culture[].burnout_risk",
+    "company_culture[].layoff_history",
+    "company_culture[].crisis_behavior",
+    "company_culture[].manager_quality",
+    "company_culture[].mission_clarity",
+    "company_culture[].employee_turnover",
+    "company_culture[].company_culture_id",
+    "company_culture[].avg_retention_tenure",
+    "company_culture[].psychological_safety",
+    "company_financials[].burn_rate",
+    "company_financials[].valuation",
+    "company_financials[].churn_rate",
+    "company_financials[].company_id",
+    "company_financials[].annual_profit",
+    "company_financials[].cac_ltv_ratio",
+    "company_financials[].runway_months",
+    "company_financials[].annual_revenue",
+    "company_financials[].burn_multiplier",
+    "company_financials[].yoy_growth_rate",
+    "company_financials[].net_promoter_score",
+    "company_financials[].profitability_status",
+    "company_financials[].total_capital_raised",
+    "company_financials[].company_financials_id",
+    "company_financials[].customer_lifetime_value",
+    "company_financials[].customer_acquisition_cost",
+    "company_logistics[].company_id",
+    "company_logistics[].weekend_work",
+    "company_logistics[].typical_hours",
+    "company_logistics[].office_zone_type",
+    "company_logistics[].location_centrality",
+    "company_logistics[].airport_commute_time",
+    "company_logistics[].company_logistics_id",
+    "company_logistics[].overtime_expectations",
+    "company_logistics[].remote_policy_details",
+    "company_people[].ceo_name",
+    "company_people[].company_id",
+    "company_people[].ceo_linkedin_url",
+    "company_people[].company_people_id",
+    "company_people[].contact_person_name",
+    "company_people[].contact_person_email",
+    "company_people[].contact_person_phone",
+    "company_people[].contact_person_title",
+    "company_people[].decision_maker_access",
+    "company_talent_growth[].company_id",
+    "company_talent_growth[].brand_value",
+    "company_talent_growth[].role_clarity",
+    "company_talent_growth[].training_spend",
+    "company_talent_growth[].early_ownership",
+    "company_talent_growth[].skill_relevance",
+    "company_talent_growth[].automation_level",
+    "company_talent_growth[].company_maturity",
+    "company_talent_growth[].exposure_quality",
+    "company_talent_growth[].internal_mobility",
+    "company_talent_growth[].onboarding_quality",
+    "company_talent_growth[].external_recognition",
+    "company_talent_growth[].company_talent_growth_id",
+    "company_talent_growth[].execution_thinking_balance",
+    "company_technologies[].company_id",
+    "company_technologies[].r_and_d_investment",
+    "company_technologies[].ai_ml_adoption_level",
+    "company_technologies[].company_technologies_id"
+  ]
+}
