@@ -344,3 +344,43 @@ export async function fetchSkillLevels(): Promise<any[]> {
     };
   });
 }
+
+export async function fetchCompanySkillLevels(companyName: string): Promise<Record<string, string> | undefined> {
+  const baseName = companyName.split(/[\s,]/)[0]; // e.g. "Healthgrades Operating Company, Inc." -> "Healthgrades"
+  
+  const { data, error } = await supabase
+    .from("staging_company_skill_levels")
+    .select("*")
+    .ilike("companies", `%${baseName}%`)
+    .limit(1)
+    .maybeSingle();
+
+  if (error) {
+    console.error("Error fetching company skill levels:", error);
+    return undefined;
+  }
+
+  if (!data) return undefined;
+
+  const skill_levels: Record<string, string> = {};
+  const skills = [
+    "coding",
+    "data_structures_and_algorithms",
+    "object_oriented_programming_and_design",
+    "aptitude_and_problem_solving",
+    "communication_skills",
+    "ai_native_engineering",
+    "devops_and_cloud",
+    "sql_and_design",
+    "software_engineering",
+    "system_design_and_architecture",
+    "computer_networking",
+    "operating_system",
+  ];
+
+  skills.forEach((skill) => {
+    skill_levels[skill] = data[skill] || "0";
+  });
+
+  return skill_levels;
+}

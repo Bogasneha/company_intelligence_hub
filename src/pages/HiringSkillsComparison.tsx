@@ -8,6 +8,18 @@ import { useNavigate } from "react-router-dom";
 const normalize = (str: string) =>
   str?.toLowerCase().replace(/[^a-z0-9]/g, "");
 
+const COGNITIVE_MAP: Record<string, string> = {
+  AS: "Analysis & Synthesis",
+  AP: "Application",
+  C: "Comprehension",
+  K: "Knowledge",
+  KW: "Knowledge",
+  E: "Evaluation",
+  EV: "Evaluation",
+  CR: "Creation",
+  CU: "Communication",
+};
+
 const HiringSkillsComparison = () => {
   const navigate = useNavigate();
   const [rowsPerPage, setRowsPerPage] = useState(20);
@@ -117,7 +129,7 @@ const HiringSkillsComparison = () => {
                       ci % 2 !== 0 ? "bg-surface/30" : ""
                     } hover:bg-accent/5 cursor-pointer`}
                     onClick={() =>
-                      navigate(`/companies/${company.company_id}`)
+                      navigate(`/companies/${company.company_id}/skills`)
                     }
                   >
                     <td className="sticky left-0 bg-card px-4 py-3 font-medium">
@@ -129,13 +141,30 @@ const HiringSkillsComparison = () => {
                       </div>
                     </td>
 
-                    {companySkills.codes.map((skillCode) => (
-                      <td key={skillCode} className="text-center px-3 py-3">
-                        {matchedKey
-                          ? companySkills.map[matchedKey]?.[skillCode] || "—"
-                          : "—"}
-                      </td>
-                    ))}
+                    {companySkills.codes.map((skillCode) => {
+                      const rawVal = matchedKey ? companySkills.map[matchedKey]?.[skillCode] : null;
+                      
+                      let label = "";
+                      if (rawVal) {
+                        const match = String(rawVal).match(/^(\d+)(?:-([A-Z]+))?$/i);
+                        if (match && match[2]) {
+                          label = COGNITIVE_MAP[match[2].toUpperCase()] || "Unknown";
+                        }
+                      }
+
+                      return (
+                        <td key={skillCode} className="text-center px-3 py-3">
+                          {rawVal ? (
+                            <div className="flex flex-col items-center justify-center">
+                               <span className="font-semibold text-foreground text-[12px]">{rawVal}</span>
+                               {label && <span className="text-[9px] text-muted-foreground whitespace-nowrap">({label})</span>}
+                            </div>
+                          ) : (
+                            <span className="text-muted-foreground">—</span>
+                          )}
+                        </td>
+                      );
+                    })}
                   </tr>
                 );
               })}

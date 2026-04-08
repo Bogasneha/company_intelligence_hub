@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "companies": "Fractal Analytics Private Limited",
+    "coding": "6-AS",
+    "data_structures_and_algorithms": "6-AS",
+    "object_oriented_programming_and_design": "4-AS",
+    "aptitude_and_problem_solving": "6-AS",
+    "communication_skills": "6-AS",
+    "ai_native_engineering": "6-AS",
+    "devops_and_cloud": "6-AP",
+    "sql_and_design": "6-AS",
+    "software_engineering": "6 - AS",
+    "system_design_and_architecture": "6-AS",
+    "computer_networking": "2-AP",
+    "operating_system": "3-AP",
+    "processed": true,
+    "processed_at": "2026-03-28T12:12:51.700163+00:00",
+    "error_message": null,
+    "created_at": "2026-03-28T12:12:51.700163+00:00"
+  }
+]

@@ -17,6 +17,11 @@ import HiringProcessHome from "@/pages/HiringProcessHome";
 import InnovXHome from "@/pages/InnovXHome";
 import NotFound from "@/pages/NotFound";
 
+import { AuthProvider } from "@/contexts/AuthContext";
+import ProtectedRoute from "@/components/ProtectedRoute";
+import SignIn from "@/pages/SignIn";
+import SignUp from "@/pages/SignUp";
+
 const queryClient = new QueryClient();
 
 const RealtimeSync = () => {
@@ -40,27 +45,34 @@ const RealtimeSync = () => {
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <RealtimeSync />
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route element={<AppLayout />}>
-            <Route path="/" element={<Dashboard />} />
-            <Route path="/companies" element={<Companies />} />
-            <Route path="/companies/:companyId" element={<CompanyDetail />} />
-            <Route path="/companies/:companyId/skills" element={<CompanySkills />} />
-            <Route path="/companies/:companyId/hiring" element={<CompanyHiring />} />
-            <Route path="/companies/:companyId/innovx" element={<CompanyInnovX />} />
-            <Route path="/hiring-skills" element={<HiringSkillsComparison />} />
-            <Route path="/hiring-process" element={<HiringProcessHome />} />
-            <Route path="/innovx" element={<InnovXHome />} />
-          </Route>
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
+    <AuthProvider>
+      <RealtimeSync />
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/signin" element={<SignIn />} />
+            <Route path="/signup" element={<SignUp />} />
+            
+            <Route element={<ProtectedRoute />}>
+              <Route element={<AppLayout />}>
+                <Route path="/" element={<Dashboard />} />
+                <Route path="/companies" element={<Companies />} />
+                <Route path="/companies/:companyId" element={<CompanyDetail />} />
+                <Route path="/companies/:companyId/skills" element={<CompanySkills />} />
+                <Route path="/companies/:companyId/hiring" element={<CompanyHiring />} />
+                <Route path="/companies/:companyId/innovx" element={<CompanyInnovX />} />
+                <Route path="/hiring-skills" element={<HiringSkillsComparison />} />
+                <Route path="/hiring-process" element={<HiringProcessHome />} />
+                <Route path="/innovx" element={<InnovXHome />} />
+              </Route>
+            </Route>
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </AuthProvider>
   </QueryClientProvider>
 );
 

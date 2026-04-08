@@ -1,5 +1,8 @@
-import { NavLink, Outlet, useLocation } from "react-router-dom";
-import { LayoutDashboard, Building2, BrainCircuit, ClipboardList, Lightbulb, Search, Settings, Bell } from "lucide-react";
+import { NavLink, Outlet, useLocation, useNavigate } from "react-router-dom";
+import { LayoutDashboard, Building2, BrainCircuit, ClipboardList, Lightbulb, Search, Settings, Bell, LogOut } from "lucide-react";
+import { useAuth } from "@/contexts/AuthContext";
+import { supabase } from "@/lib/supabaseClient";
+import { useToast } from "@/components/ui/use-toast";
 
 const navItems = [
   { to: "/", icon: LayoutDashboard, label: "Dashboard" },
@@ -11,6 +14,22 @@ const navItems = [
 
 export default function AppLayout() {
   const location = useLocation();
+  const navigate = useNavigate();
+  const { user } = useAuth();
+  const { toast } = useToast();
+
+  const handleLogout = async () => {
+    try {
+      await supabase.auth.signOut();
+      navigate("/signin");
+    } catch (error: any) {
+      toast({
+        title: "Error",
+        description: "Failed to log out",
+        variant: "destructive",
+      });
+    }
+  };
 
   const getPageTitle = () => {
     switch (location.pathname) {
@@ -35,7 +54,7 @@ export default function AppLayout() {
             <BrainCircuit className="h-5 w-5" />
           </div>
           <div>
-            <h1 className="text-[15px] font-bold tracking-tight text-sidebar-foreground">SRM Research</h1>
+            <h1 className="text-[15px] font-bold tracking-tight text-sidebar-foreground">CIH</h1>
           </div>
         </div>
 
@@ -70,14 +89,25 @@ export default function AppLayout() {
         {/* Footer / User Position Area */}
         <div className="p-4">
            <div className="px-2 py-2 mb-1 text-xs font-semibold text-sidebar-muted">Your position</div>
-           <div className="flex items-center gap-3 px-2 py-2 rounded-lg hover:bg-sidebar-accent/50 cursor-pointer transition-colors">
-              <div className="h-8 w-8 rounded-full bg-border flex items-center justify-center text-xs font-bold text-muted-foreground overflow-hidden">
-                 <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Liam" alt="Avatar" className="w-full h-full object-cover" />
+           <div className="flex items-center justify-between gap-3 px-2 py-2 rounded-lg hover:bg-sidebar-accent/50 transition-colors group">
+              <div className="flex items-center gap-3 overflow-hidden">
+                <div className="h-8 w-8 shrink-0 rounded-full bg-border flex items-center justify-center text-xs font-bold text-muted-foreground overflow-hidden">
+                   <img src={`https://api.dicebear.com/7.x/initials/svg?seed=${user?.email || 'User'}`} alt="Avatar" className="w-full h-full object-cover" />
+                </div>
+                <div className="overflow-hidden">
+                   <p className="text-sm font-semibold text-sidebar-foreground truncate" title={user?.email || "User"}>
+                     {user?.email ? user.email.split('@')[0] : "User"}
+                   </p>
+                   <p className="text-xs text-sidebar-muted truncate">{user?.email || "No email"}</p>
+                </div>
               </div>
-              <div>
-                 <p className="text-sm font-semibold text-sidebar-foreground">System Admin</p>
-                 <p className="text-xs text-sidebar-muted">Analytics Lead</p>
-              </div>
+              <button 
+                onClick={handleLogout}
+                className="text-sidebar-muted hover:text-red-500 transition-colors p-1 rounded hover:bg-red-500/10 opacity-0 group-hover:opacity-100 shrink-0"
+                title="Log out"
+              >
+                <LogOut className="h-4 w-4" />
+              </button>
            </div>
         </div>
       </aside>

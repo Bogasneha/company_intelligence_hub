@@ -1,8 +1,8 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useQuery } from "@tanstack/react-query";
-import { 
-  MapPin, Calendar, Users, Globe, Briefcase, ExternalLink, BrainCircuit, ClipboardList, Lightbulb, CheckCircle, Activity, LayoutGrid 
+import {
+  MapPin, Calendar, Users, Globe, Briefcase, ExternalLink, BrainCircuit, ClipboardList, Lightbulb, CheckCircle, Activity, LayoutGrid
 } from "lucide-react";
 import { fetchCompanyComplete } from "@/lib/supabaseData";
 
@@ -357,8 +357,8 @@ const TABS_CONFIG: TabDef[] = [
     ]
   },
   {
-      id: "brand",
-      sections: [
+    id: "brand",
+    sections: [
       {
         title: "Brand & Reputation",
         fields: [
@@ -415,7 +415,7 @@ function TabContent({ tabId, company }: { tabId: string; company: any }) {
             <h3 className="text-[13px] font-bold text-slate-500 uppercase tracking-widest border-b border-gray-200 pb-3 mb-5">
               {section.title}
             </h3>
-            
+
             {metrics.length > 0 && (
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
                 {metrics.map(f => (
@@ -423,27 +423,27 @@ function TabContent({ tabId, company }: { tabId: string; company: any }) {
                 ))}
               </div>
             )}
-            
+
             {links.length > 0 && (
-               <div className="flex flex-wrap gap-3 mt-4">
-                 {links.map(f => {
-                   const val = normalizeValue(getValue(company, f.key));
-                   return (
-                      <a
-                        key={f.key}
-                        href={val === "Not Available" ? undefined : val}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="flex items-center gap-2 rounded-2xl border border-[#fda4af] bg-white px-5 py-2.5 text-[14px] font-bold text-[#f04c63] hover:border-[#fca5a5] hover:shadow-sm transition-all"
-                      >
-                        <Globe className="h-[18px] w-[18px] text-[#f04c63]" strokeWidth={1.5} /> 
-                        {f.label}: 
-                        <span className="text-slate-500 font-medium truncate max-w-[200px] pl-1">{val}</span> 
-                        <ExternalLink className="h-3.5 w-3.5 ml-2 text-[#f04c63]" strokeWidth={1.5} />
-                      </a>
-                   );
-                 })}
-               </div>
+              <div className="flex flex-wrap gap-3 mt-4">
+                {links.map(f => {
+                  const val = normalizeValue(getValue(company, f.key));
+                  return (
+                    <a
+                      key={f.key}
+                      href={val === "Not Available" ? undefined : val}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center gap-2 rounded-2xl border border-[#fda4af] bg-white px-5 py-2.5 text-[14px] font-bold text-[#f04c63] hover:border-[#fca5a5] hover:shadow-sm transition-all"
+                    >
+                      <Globe className="h-[18px] w-[18px] text-[#f04c63]" strokeWidth={1.5} />
+                      {f.label}:
+                      <span className="text-slate-500 font-medium truncate max-w-[200px] pl-1">{val}</span>
+                      <ExternalLink className="h-3.5 w-3.5 ml-2 text-[#f04c63]" strokeWidth={1.5} />
+                    </a>
+                  );
+                })}
+              </div>
             )}
 
             {lists.length > 0 && (
@@ -459,8 +459,8 @@ function TabContent({ tabId, company }: { tabId: string; company: any }) {
                 {texts.map(f => (
                   <div key={f.key} className="rounded-2xl border border-slate-100 bg-white p-6 h-full shadow-[0_2px_10px_-4px_rgba(0,0,0,0.05)] hover:shadow-md transition-all duration-300">
                     <div className="flex items-center gap-2 mb-4">
-                       <CheckCircle className="h-[18px] w-[18px] text-[#28A6E3]" strokeWidth={2} />
-                       <h4 className="text-[12px] font-bold text-[#28A6E3] uppercase tracking-widest">{f.label}</h4>
+                      <CheckCircle className="h-[18px] w-[18px] text-[#28A6E3]" strokeWidth={2} />
+                      <h4 className="text-[12px] font-bold text-[#28A6E3] uppercase tracking-widest">{f.label}</h4>
                     </div>
                     <p className="text-[14px] leading-relaxed font-medium text-[#475569] whitespace-pre-wrap">
                       {normalizeValue(getValue(company, f.key))}
@@ -514,12 +514,12 @@ const CompanyDetail = () => {
     talent: cTal,
     brand: cBrand,
     staging: cStage,
-    
+
     // Provide backwards compatibility for deeply nested arrays safely
     overview_text: compDb?.company_overview?.[0]?.overview_text || compDb.overview_text || cStage.overview_text,
     core_values: compDb?.company_core_values?.[0]?.core_values || compDb.core_values || cStage.core_values,
     awards_recognitions: compDb?.company_awards_recognitions?.[0]?.awards_recognitions || cBrand.awards_recognitions || cStage.awards_recognitions,
-    
+
     // Main company relations
     logo_url: compDb?.company_logo?.[0]?.logo_url || compDb.logo_url || cStage.logo_url,
     operating_countries: compDb?.company_operating_countries_map?.[0]?.operating_countries || compDb.operating_countries || cStage.operating_countries,
@@ -536,7 +536,7 @@ const CompanyDetail = () => {
     supply_chain_dependencies: compDb?.company_supply_chain_dependencies?.[0]?.supply_chain_dependencies || compDb.supply_chain_dependencies || cStage.supply_chain_dependencies,
     event_participation: compDb?.company_event_participation?.[0]?.event_participation || cBrand.event_participation || cStage.event_participation,
     website_traffic_rank: compDb?.company_website_traffic_rank?.[0]?.website_traffic_rank || cBrand.website_traffic_rank || cStage.website_traffic_rank,
-    
+
     // Business nested relations - extract from company_business relation
     business_model: cBusi.business_model || cStage.business_model,
     target_market: cBusi.target_market || cStage.target_market,
@@ -566,7 +566,7 @@ const CompanyDetail = () => {
     strategic_priorities: cBusi?.company_strategic_priorities?.[0]?.strategic_priorities || cBusi.strategic_priorities || cStage.strategic_priorities,
     product_pipeline: cBusi?.company_product_pipeline?.[0]?.product_pipeline || cBusi.product_pipeline || cStage.product_pipeline,
     exit_strategy_history: cBusi?.company_exit_strategy_history?.[0]?.exit_strategy_history || cBusi.exit_strategy_history || cStage.exit_strategy_history,
-    
+
     // Compensation & Benefits nested relations - extract from company_compensation relation
     leave_policy: cComp?.company_leave_policy?.[0]?.leave_policy || cComp.leave_policy || cStage.leave_policy,
     health_support: cComp?.company_health_support?.[0]?.health_support || cComp.health_support || cStage.health_support,
@@ -576,7 +576,7 @@ const CompanyDetail = () => {
     fixed_vs_variable_pay: cComp.fixed_vs_variable_pay || cStage.fixed_vs_variable_pay,
     bonus_predictability: cComp.bonus_predictability || cStage.bonus_predictability,
     esops_incentives: cComp.esops_incentives || cStage.esops_incentives,
-    
+
     // Technology nested relations - extract from company_technologies relation
     tech_stack: cTech?.company_tech_stack?.[0]?.tech_stack || cTech.tech_stack || cStage.tech_stack,
     technology_partners: cTech?.company_technology_partners?.[0]?.technology_partners || cTech.technology_partners || cStage.technology_partners,
@@ -586,7 +586,7 @@ const CompanyDetail = () => {
     intellectual_property: cTech?.company_intellectual_property?.[0]?.intellectual_property || cTech.intellectual_property || cStage.intellectual_property,
     cybersecurity_posture: cTech?.company_cybersecurity_posture?.[0]?.cybersecurity_posture || cTech.cybersecurity_posture || cStage.cybersecurity_posture,
     ai_ml_adoption_level: cTech?.company_ai_ml_adoption_level?.[0]?.ai_ml_adoption_level || cTech.ai_ml_adoption_level || cStage.ai_ml_adoption_level,
-    
+
     // Financial nested relations - extract from company_financials relation
     revenue_mix: cFin?.company_revenue_mix?.[0]?.revenue_mix || cFin.revenue_mix || cStage.revenue_mix,
     annual_profit: cFin?.company_annual_profit?.[0]?.annual_profit || cFin.annual_profit || cStage.annual_profit,
@@ -605,7 +605,7 @@ const CompanyDetail = () => {
     valuation: cFin.valuation || cStage.valuation,
     yoy_growth_rate: cFin.yoy_growth_rate || cStage.yoy_growth_rate,
     profitability_status: cFin.profitability_status || cStage.profitability_status,
-    
+
     // Talent Growth nested relations - extract from company_talent_growth relation
     work_culture_summary: cTal?.company_work_culture_summary?.[0]?.work_culture_summary || cTal.work_culture_summary || cStage.work_culture_summary,
     feedback_culture: cTal?.company_feedback_culture?.[0]?.feedback_culture || cTal.feedback_culture || cStage.feedback_culture,
@@ -632,10 +632,10 @@ const CompanyDetail = () => {
     execution_thinking_balance: cTal.execution_thinking_balance || cStage.execution_thinking_balance,
     automation_level: cTal.automation_level || cStage.automation_level,
     cross_functional_exposure: cTal.cross_functional_exposure || cStage.cross_functional_exposure,
-    
+
     // Global/Office related
     office_count: compDb?.company_global?.[0]?.office_count || compDb.office_count || cStage.office_count,
-    
+
     // Additional missing fields - direct from main tables or need to be added to query
     nature_of_company: compDb.nature_of_company || cStage.nature_of_company,
     vision_statement: compDb.vision_statement || cStage.vision_statement,
@@ -710,7 +710,7 @@ const CompanyDetail = () => {
 
   return (
     <div className="min-h-screen">
-      <div className="sticky top-0 z-30 border-b border-border bg-card">
+      <div className="sticky top-16 z-30 border-b border-border bg-card shadow-sm">
         <div className="px-8 py-5">
           <div className="flex items-start justify-between">
             <div className="flex items-center gap-4">
@@ -735,20 +735,20 @@ const CompanyDetail = () => {
             </div>
             <div className="flex items-center gap-8 pl-4">
               <button onClick={() => navigate(`/companies/${companyId}/skills`)} className="flex items-center gap-3 group transition-all duration-300">
-                <div className="bg-[#f2f5ed] p-2.5 rounded-full group-hover:bg-[#e4ebd8] transition-colors">
-                  <BrainCircuit className="h-[18px] w-[18px] text-[#A3B85D]" strokeWidth={2} /> 
+                <div className="bg-[#e5e7eb] p-2.5 rounded-full group-hover:bg-[#111827] transition-colors">
+                  <BrainCircuit className="h-[18px] w-[18px] text-[#6b7280]" strokeWidth={2} />
                 </div>
-                <span className="text-[14px] font-bold text-[#5c6846] leading-tight text-left">Hiring Skill<br/>Sets</span>
+                <span className="text-[14px] font-bold text-[#5c6846] leading-tight text-left">Hiring Skill<br />Sets</span>
               </button>
               <button onClick={() => navigate(`/companies/${companyId}/hiring`)} className="flex items-center gap-3 group transition-all duration-300">
-                <div className="bg-[#f2f5ed] p-2.5 rounded-full group-hover:bg-[#e4ebd8] transition-colors">
-                  <ClipboardList className="h-[18px] w-[18px] text-[#A3B85D]" strokeWidth={2} /> 
+                <div className="bg-[#e5e7eb] p-2.5 rounded-full group-hover:bg-[#111827] transition-colors">
+                  <ClipboardList className="h-[18px] w-[18px] text-[#6b7280]" strokeWidth={2} />
                 </div>
-                <span className="text-[14px] font-bold text-[#5c6846] leading-tight text-left">Hiring<br/>Process</span>
+                <span className="text-[14px] font-bold text-[#5c6846] leading-tight text-left">Hiring<br />Process</span>
               </button>
               <button onClick={() => navigate(`/companies/${companyId}/innovx`)} className="flex items-center gap-3 group transition-all duration-300">
-                <div className="bg-[#f2f5ed] p-2.5 rounded-full group-hover:bg-[#e4ebd8] transition-colors">
-                  <Lightbulb className="h-[18px] w-[18px] text-[#A3B85D]" strokeWidth={2} /> 
+                <div className="bg-[#e5e7eb] p-2.5 rounded-full group-hover:bg-[#111827] transition-colors">
+                  <Lightbulb className="h-[18px] w-[18px] text-[#6b7280]" strokeWidth={2} />
                 </div>
                 <span className="text-[14px] font-bold text-[#5c6846] leading-tight text-left">INNOVX</span>
               </button>
@@ -761,11 +761,10 @@ const CompanyDetail = () => {
             <button
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
-              className={`shrink-0 border-b-2 px-4 py-2.5 text-xs font-medium transition-all ${
-                activeTab === tab.id
+              className={`shrink-0 border-b-2 px-4 py-2.5 text-xs font-medium transition-all ${activeTab === tab.id
                   ? "border-accent text-accent"
                   : "border-transparent text-muted-foreground hover:text-foreground hover:border-border"
-              }`}
+                }`}
             >
               {tab.label}
             </button>
